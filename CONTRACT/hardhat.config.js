@@ -1,24 +1,30 @@
 require("@nomiclabs/hardhat-waffle");
-
 const fs = require("fs");
-const privateKey = fs.readFileSync(".secret").toString();
-const projectId = "3563bdf92c4890518396bd186677a6bc37e727f3";
 
+const projectID = fs.readFileSync(".projectId").toString();
+const prvKey = fs.readFileSync(".secret").toString();
 
 module.exports = {
-  networks:{
-    hardhat:{
-      chainId:1337,
-
+  networks: {
+    hardhat: {
+      chainId: 1337
     },
-    mumbai:{
-      url:`https://rpc-mumbai.maticvigil.com/v1/${projectId}`,
-      accounts : [privateKey]
+    mainnet: {
+      url: `https://rpc-mainnet.maticvigil.com/v1/${projectID}`,
+      accounts: [prvKey]
     },
-    mainnet:{
-      url:`https://rpc-mainnet.maticvigil.com/v1/${projectId}`,
-      accounts : [privateKey]
+    mumbai: {
+      url: `https://rpc-mumbai.maticvigil.com/v1/${projectID}`,
+      accounts: [prvKey]
     }
   },
-  solidity: "0.8.4",
+  solidity: {
+    version: "0.8.4",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  }
 };
