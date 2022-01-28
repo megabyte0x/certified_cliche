@@ -3,6 +3,7 @@ const hre = require("hardhat");
 async function main() {
   const [deployer] = await hre.ethers.getSigners();
 
+  // Deployer Address
   console.log(
     "Deploying contracts with the account:",
     deployer.address
@@ -17,7 +18,8 @@ async function main() {
   txReceipt = await ethers.provider.waitForTransaction(txHash);
   let nftTransferAddress = txReceipt.contractAddress
 
-  console.log("nftMarket deployed to:", nftTransferAddress);
+  // NFT Transfer Contract Address
+  console.log("nftTransfer deployed to:", nftTransferAddress);
 
   const NFT = await hre.ethers.getContractFactory("NFT");
   const nft = await NFT.deploy(nftTransferAddress);
@@ -29,6 +31,7 @@ async function main() {
   txReceipt = await ethers.provider.waitForTransaction(txHash);
   let nftAddress = txReceipt.contractAddress
 
+  // NFT Contract Address
   console.log("nft deployed to:", nftAddress);
 }
 

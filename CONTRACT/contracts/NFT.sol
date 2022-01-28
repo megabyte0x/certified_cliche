@@ -13,7 +13,9 @@ contract NFT is ERC721URIStorage {
     //address of the NFT market place
     address contractAddress;
 
-    constructor(address marketplaceAddress) ERC721("OpenSea Tokens", "OPT") {
+    constructor(address marketplaceAddress)
+        ERC721("Certified-Cliche", "CC") // Name of the Token and it's symbol.
+    {
         contractAddress = marketplaceAddress;
     }
 

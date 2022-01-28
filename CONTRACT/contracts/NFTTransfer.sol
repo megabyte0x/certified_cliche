@@ -1,4 +1,4 @@
-//
+//SPDX-License-Identifier: Unlicense
 
 pragma solidity ^0.8.4;
 
@@ -10,17 +10,22 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 contract NFTTransfer is ReentrancyGuard {
     using Counters for Counters.Counter;
-
+    
+    // auto-increment field for 
+    //  Item Id and No. of Items Transferred
     Counters.Counter private _itemIds;
     Counters.Counter private _itemTrans;
 
     address payable owner;
+
+    //Listing Price of an NFT on the platform
     uint256 listingPrice = 0.025 ether;
 
     constructor() {
         owner = payable(msg.sender);
     }
 
+    // Data Structure of a certificate
     struct Certificate {
         uint256 itemId;
         address nftContract;
@@ -30,6 +35,7 @@ contract NFTTransfer is ReentrancyGuard {
         bool transferred;
     }
 
+    // Mapping the Certificates with respect to their IDs.
     mapping(uint256 => Certificate) private certificateIds;
 
     event CertificateItemCreated(
@@ -41,19 +47,26 @@ contract NFTTransfer is ReentrancyGuard {
         bool transferred
     );
 
+    /// @notice Function to get the listing price for frontend
     function getListingPrice() public view returns (uint256) {
         return listingPrice;
     }
 
+    /// @notice Function for Creating a certificate on the Platform
+    /// @param nftContract: NFT contract address
+    /// @param tokenId: Token Id of the contract.
     function createCertificate(address nftContract, uint256 tokenId)
-        public
-        payable
+        public 
+        payable 
         nonReentrant
     {
         require(
             msg.value == listingPrice,
             "Price must be equal to listing price"
         );
+        
+        //Transfer Listing Price to Owner of the Contract
+        payable(owner).transfer(msg.value);
 
         _itemIds.increment();
         uint256 itemId = _itemIds.current();
@@ -67,8 +80,10 @@ contract NFTTransfer is ReentrancyGuard {
             false
         );
 
+        // Transferring the NFT contract from the User to the Address of this contact
         IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
 
+        // Triggering the CertificateItemCreated event
         emit CertificateItemCreated(
             itemId,
             nftContract,
@@ -79,6 +94,10 @@ contract NFTTransfer is ReentrancyGuard {
         );
     }
 
+    /// @notice Function to transfer certificate from the Contract Address to the applicant address.
+    /// @param nftContract: NFT contract address
+    /// @param itemId: Item Id in the certificateIds map.
+    /// @param applicantAdd: Address of the applicant where to transfer the certificate
     function transferCertificate(
         address nftContract,
         uint256 itemId,
@@ -93,10 +112,10 @@ contract NFTTransfer is ReentrancyGuard {
         certificateIds[itemId].transferred = true;
         _itemTrans.increment();
 
-        payable(owner).transfer(listingPrice);
+        // payable(owner).transfer(listingPrice);
     }
 
-    //Returns the Certificates created
+    /// @notice Returns the Certificates created
     function fetchCertificatesCreated() public view returns (Certificate[] memory) {
         uint256 totalItemCount = _itemIds.current();
         uint256 itemCount = 0;
@@ -120,7 +139,7 @@ contract NFTTransfer is ReentrancyGuard {
         return items;
     }
 
-    // Certificates Left to Transfer
+    /// @notice  Certificates Left to Transfer
     function fetchCertificatesLeft()
         public
         view
@@ -144,7 +163,7 @@ contract NFTTransfer is ReentrancyGuard {
         return items;
     }
 
-    // Certificates Left to Transfer
+    /// @notice Certificates Transsferred
     function fetchCertificatesTransferred()
         public
         view
@@ -168,7 +187,7 @@ contract NFTTransfer is ReentrancyGuard {
         return items;
     }
 
-    // Returns certificates of the user
+    /// @notice Returns certificates of the user
     function fetchMyCertificates() public view returns (Certificate[] memory) {
         uint256 totalItemCount = _itemIds.current();
         uint256 itemCount = 0;

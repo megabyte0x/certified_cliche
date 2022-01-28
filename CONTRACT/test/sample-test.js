@@ -34,7 +34,7 @@ describe("NFTTransfer", function () {
     // Transfering the NFT
     await nftTransfer.connect(buyersAddress).transferCertificate(nftContractAddress, 1,add1.address);
 
-    items = await nftTransfer.fetchMyCertificates();
+    items = await nftTransfer.connect(add1).fetchMyCertificates();
 
     items = await Promise.all(items.map(async i => {
       const tokenUri = await nft.tokenURI(i.tokenId);
