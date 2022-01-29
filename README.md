@@ -32,10 +32,14 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 <br>
 
+### Give the repo a Star and Fork it.
+
+<br>
+
 ### Clone the repo in a directory.
 
 ```
-git clone https://github.com/Megabyte-143/certified_cliche.git
+git clone https://github.com/${GitHub Username}/certified_cliche.git
 ```
 
 <br>
