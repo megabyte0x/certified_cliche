@@ -67,7 +67,7 @@ export default function Home() {
     await transaction.wait();
     loadNFTs();
   }
-  
+
 
   if (loadingState === "loaded" && !nfts.length) return (
     <h1 className="px-20 py-10 text-3xl" >No Certificates Created or Left to Transfer</h1>
@@ -80,28 +80,27 @@ export default function Home() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img style={{objectFit: "cover", height: 300}} src={nft.image} height={300} width={300} alt={nft.name}/>
+                <img style={{ objectFit: "cover", height: 300 }} src={nft.image} height={300} width={300} alt={nft.name} />
                 <div className="p-4">
                   <p className="text-2xl font-semibold">{nft.name}</p>
                   <div style={{ height: '70px', overflow: 'hidden' }}>
                     <p className="text-gray-400">{nft.description}</p>
                   </div>
                 </div>
-                {transferSelected==i&&<div className={`pb-2 pt-2 bg-black ${classes.tranfer_text_block}`}>
-                    <input
-                      className={`${classes.tranfer_text} mt-2 mb-2 ml-4 mr-4 border rounded`}
-                      placeholder="Applicant Wallet Address"
-                      onChange={e => setWalletAdd(e.target.value)}
-                    />
-                    <button onClick={() => transferNFT(nft)} className={classes.transfer_main_btn}>Done</button>
-                  </div>}
-                  {
-                    transferSelected!=i&&
-                    <div className="p-4 bg-black">
-                      <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" onClick={()=>{setTransferSelected(i)}}>TRANSFER </button>
-                    </div>
-                  }
-                
+                {transferSelected == i && <div className={`pb-2 pt-2 bg-black ${classes.tranfer_text_block}`}>
+                  <input
+                    className={`${classes.tranfer_text} mt-2 mb-2 ml-4 mr-4 border rounded`}
+                    placeholder="Applicant Wallet Address"
+                    onChange={e => setWalletAdd(e.target.value)}
+                  />
+                  <button onClick={() => transferNFT(nft)} className={classes.transfer_main_btn}>Done</button>
+                </div>}
+                {
+                  transferSelected != i &&
+                  <div className="p-4 bg-black">
+                    <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" onClick={() => { setTransferSelected(i) }}>TRANSFER </button>
+                  </div>
+                }
               </div>
             ))
           }
