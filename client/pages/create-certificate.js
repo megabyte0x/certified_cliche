@@ -14,7 +14,7 @@ import { isCommunityResourcable } from "@ethersproject/providers";
 
 export default function CreateItem() {
     const [fileUrl, setFileUrl] = useState(null);
-    const [formInput, updateFormInput] = useState({name: '', description: '' });
+    const [formInput, updateFormInput] = useState({ name: '', description: '' });
 
     const router = useRouter();
 
@@ -30,7 +30,7 @@ export default function CreateItem() {
             );
             //IPFS of the NFT
             const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-            
+
             setFileUrl(url);
         } catch (error) {
             console.log(error);

@@ -10,8 +10,8 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 contract NFTTransfer is ReentrancyGuard {
     using Counters for Counters.Counter;
-    
-    // auto-increment field for 
+
+    // auto-increment field for
     //  Item Id and No. of Items Transferred
     Counters.Counter private _itemIds;
     Counters.Counter private _itemTrans;
@@ -56,15 +56,15 @@ contract NFTTransfer is ReentrancyGuard {
     /// @param nftContract: NFT contract address
     /// @param tokenId: Token Id of the contract.
     function createCertificate(address nftContract, uint256 tokenId)
-        public 
-        payable 
+        public
+        payable
         nonReentrant
     {
         require(
             msg.value == listingPrice,
             "Price must be equal to listing price"
         );
-        
+
         //Transfer Listing Price to Owner of the Contract
         payable(owner).transfer(msg.value);
 
@@ -116,7 +116,11 @@ contract NFTTransfer is ReentrancyGuard {
     }
 
     /// @notice Returns the Certificates created
-    function fetchCertificatesCreated() public view returns (Certificate[] memory) {
+    function fetchCertificatesCreated()
+        public
+        view
+        returns (Certificate[] memory)
+    {
         uint256 totalItemCount = _itemIds.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;

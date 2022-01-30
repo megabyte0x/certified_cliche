@@ -2,11 +2,11 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
-import "../styles/Home.module.css"
 import { nftAddress, nftTransferAddress } from "../../CONTRACT/config";
 
 import NFT from "../abi/NFT.json";
 import NFTTransfer from "../abi/NFTTransfer.json";
+import classes from '../styles/transferred-certificate.module.css'
 
 export default function MyAssets() {
     const [nfts, setNFTs] = useState([]);
@@ -55,10 +55,10 @@ export default function MyAssets() {
                     {
                         nfts.map((nft, i) => (
                             <div key={i} className="border shadow rounded-xl overflow-hidden">
-                                <img src={nft.image} className="rounded" />
-                                <div className="p-2 bg-black" >
+                                <img src={nft.image} className={`${classes.img_nft}`} />
+                                <div className="p-4 bg-black" >
                                     <p className="text-2xl font-bold text-white">Owner </p>
-                                    <p className="text-white text-xs mr-5 address ">{nft.owner.toString()} </p>
+                                    <p className="text-white text-xs mr-5 address" style={{ fontSize: '10px' }}>{nft.owner.toString()} </p>
                                 </div>
                             </div>
                         ))

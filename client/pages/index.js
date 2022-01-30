@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 import Popup from 'reactjs-popup';
+import classes from '../styles/Home.module.css'
 
 
 import { nftAddress, nftTransferAddress, rpc_url } from "../../CONTRACT/config";
@@ -14,6 +15,7 @@ export default function Home() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState('not-loaded');
   const [walletAdd, setWalletAdd] = useState(null);
+  const [transferSelected, setTransferSelected] = useState(-1);
 
   useEffect(() => {
     loadNFTs();
@@ -66,6 +68,7 @@ export default function Home() {
     loadNFTs();
   }
 
+
   if (loadingState === "loaded" && !nfts.length) return (
     <h1 className="px-20 py-10 text-3xl" >No Certificates Created or Left to Transfer</h1>
   );
@@ -77,26 +80,27 @@ export default function Home() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} height={300} width={300} />
+                <img style={{ objectFit: "cover", height: 300 }} src={nft.image} height={300} width={300} alt={nft.name} />
                 <div className="p-4">
-                  <p style={{ height: '64px' }} className="text-2xl font-semibold">{nft.name}</p>
+                  <p className="text-2xl font-semibold">{nft.name}</p>
                   <div style={{ height: '70px', overflow: 'hidden' }}>
                     <p className="text-gray-400">{nft.description}</p>
                   </div>
                 </div>
-                <div className="p-4 bg-black">
-                  <Popup trigger={<button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" >TRANSFER</button>}
-                    position="center">
-                    <div className="bg-white ">
-                      <input
-                        placeholder="Applicant Wallet Address"
-                        className="mt-8 mb-8 ml-4 mr-4 border rounded"
-                        onChange={e => setWalletAdd(e.target.value)}
-                      />
-                      <button onClick={() => transferNFT(nft)} className="bg-green">Transfer</button>
-                    </div>
-                  </Popup>
-                </div>
+                {transferSelected == i && <div className={`pb-2 pt-2 bg-black ${classes.tranfer_text_block}`}>
+                  <input
+                    className={`${classes.tranfer_text} mt-2 mb-2 ml-4 mr-4 border rounded`}
+                    placeholder="Applicant Wallet Address"
+                    onChange={e => setWalletAdd(e.target.value)}
+                  />
+                  <button onClick={() => transferNFT(nft)} className={classes.transfer_main_btn}>Done</button>
+                </div>}
+                {
+                  transferSelected != i &&
+                  <div className="p-4 bg-black">
+                    <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" onClick={() => { setTransferSelected(i) }}>TRANSFER </button>
+                  </div>
+                }
               </div>
             ))
           }

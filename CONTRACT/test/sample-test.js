@@ -18,8 +18,6 @@ describe("NFTTransfer", function () {
     let listingPrice = await nftTransfer.getListingPrice();
     listingPrice = listingPrice.toString(); // Getting the Listing Price of the NFT
 
-    // const auctionPrice = ethers.utils.parseUnits('100', 'ether'); // Selling Price of the NFT
-
     //Create The NFTs (2 nfts here);
     await nft.createToken("https://www.mytokenlocation.com");
     await nft.createToken("https://www.mytokenlocation2.com");
