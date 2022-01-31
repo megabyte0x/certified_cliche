@@ -28,6 +28,16 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 # How to Run
 
+## Prerequisites
+
+<br>
+
+### Metamask Installed as extension in your Browser.
+### Nodejs Installed in your system.
+### Knowledge of Git and GitHub
+
+<br>
+
 ## Intialization
 
 <br>
@@ -122,10 +132,13 @@ npx hardhat nodes
 <br>
 
 ### Copy the `NFT.json` from
+
 ```
 CONTRACT/artifacts/contracts/NFT.sol/NFT.json
 ```
-### and replace it with the 
+
+### and replace it with the
+
 ```
 client/abi/NFT.json
 ```
@@ -133,13 +146,20 @@ client/abi/NFT.json
 <br>
 
 ### Copy the `NFTTransfer.json` from
+
 ```
 CONTRACT/artifacts/contracts/NFTTransfer.sol/NFTTransfer.json
 ```
-### and replace it with the 
+
+### and replace it with the
+
 ```
 client/abi/NFTTransfer.json
 ```
+
+<br>
+
+### Set the Metamask Network to LocalHost
 
 <br>
 
@@ -185,6 +205,7 @@ You can get them by using a demo wallet and requesting through `Polygon Faucet`.
 <br>
 
 ### Paste the Wallet Private Key into the `CONTRACT/hardhat.config.js`
+
 ```
 const prvKey = 'privateKey'
 ```
@@ -217,10 +238,13 @@ const provider = new ethers.providers.JsonRpcProvider(rpc_url);
 <br>
 
 ### Copy the `NFT.json` from
+
 ```
 CONTRACT/artifacts/contracts/NFT.sol/NFT.json
 ```
-### and replace it with the 
+
+### and replace it with the
+
 ```
 client/abi/NFT.json
 ```
@@ -228,13 +252,20 @@ client/abi/NFT.json
 <br>
 
 ### Copy the `NFTTransfer.json` from
+
 ```
 CONTRACT/artifacts/contracts/NFTTransfer.sol/NFTTransfer.json
 ```
-### and replace it with the 
+
+### and replace it with the
+
 ```
 client/abi/NFTTransfer.json
 ```
+
+<br>
+
+### <a href="https://blog.pods.finance/guide-connecting-mumbai-testnet-to-your-metamask-87978071aca8">Add the RPC URL in your Metamask</a>
 
 <br>
 
@@ -247,6 +278,23 @@ npm run dev
 <br>
 <br>
 
-<p align="center">
+<div align="center">
+<h2>For Any Queries</h2>
 <a href="https://t.me/+kJl1BmcgYfo2YzM1"><img alt="TF" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/> </a>
-</p>
+</div>
+
+<br>
+<br>
+
+<div align="center"> 
+<h2>Project Created by </h2>
+
+<h1 align="center">
+
+<a href="https://www.linkedin.com/in/angshuman-barpujari-26504016b/">Angshuman Barpujari</a>
+
+<a href="https://www.linkedin.com/in/yash-garg-megabyte/"> Yash Garg</a>
+
+</h1>
+
+</div>
