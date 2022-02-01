@@ -13,9 +13,14 @@ export default function MyAssets() {
     const [loadingState, setLoadingState] = useState('not-loaded');
 
     useEffect(() => {
+        //load nfts when the webpage loads
         loadNFTs()
     }, []);
 
+    /**
+     * Load transferred Nft
+     * @returns {Promise<void>}
+     */
     async function loadNFTs() {
         const web3Modal = new Web3Modal();
         const connection = await web3Modal.connect();
@@ -24,10 +29,13 @@ export default function MyAssets() {
 
         const marketContract = new ethers.Contract(nftTransferAddress, NFTTransfer.abi, signer);
         const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
+        //fetching the transferred certificates from the market contracts
         const data = await marketContract.fetchCertificatesTransferred();
 
         const items = await Promise.all(data.map(async i => {
+            //getting the ipfs url of each certificate item
             const tokenURI = await tokenContract.tokenURI(i.tokenId);
+            //fetching the ipfs url, which will return a meta json
             const meta = await axios.get(tokenURI);
 
 
