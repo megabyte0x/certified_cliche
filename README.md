@@ -278,6 +278,11 @@ npm run dev
 <br>
 <br>
 
+*Currently it is deployed on the Polygon Mumbai-Testnet.
+
+
+<br>
+
 <div align="center">
 <h2>For Any Queries</h2>
 <a href="https://t.me/+kJl1BmcgYfo2YzM1"><img alt="TF" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/> </a>
