@@ -280,6 +280,7 @@ npm run dev
 
 *Currently it is deployed on the Polygon Mumbai-Testnet.
 
+*Make Pull Request on Dev Branch Only
 
 <br>
 
