@@ -15,9 +15,14 @@ export default function CreatorDashboard() {
     const [loadingState, setLoadingState] = useState('not-loaded');
 
     useEffect(() => {
+        //load nft when web page loads
         loadNFTs();
     }, []);
 
+    /**
+     * Load the current user Nft
+     * @returns {Promise<void>}
+     */
     async function loadNFTs() {
         const web3Modal = new Web3Modal();
         const connection = await web3Modal.connect();
@@ -26,10 +31,13 @@ export default function CreatorDashboard() {
 
         const marketContract = new ethers.Contract(nftTransferAddress, NFTTransfer.abi, signer);
         const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
+        //fetching the user's certificates from the market contracts
         const data = await marketContract.fetchMyCertificates();
 
         const items = await Promise.all(data.map(async i => {
+            //getting the ipfs url of each certificate item
             const tokenURI = await tokenContract.tokenURI(i.tokenId);
+            //fetching the ipfs url, which will return a meta json
             const meta = await axios.get(tokenURI);
 
             let item = {

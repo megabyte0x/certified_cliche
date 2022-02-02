@@ -18,11 +18,16 @@ export default function Home() {
   const [transferSelected, setTransferSelected] = useState(-1);
 
   useEffect(() => {
+    //start loading the nfts when webpage loads
     loadNFTs();
   }, []);
 
+  /**
+   * Load all Nft
+   * @returns {Promise<void>}
+   */
   async function loadNFTs() {
-
+    
     // For the Mumbai Testnet
     const provider = new ethers.providers.JsonRpcProvider(rpc_url);
 
@@ -32,10 +37,12 @@ export default function Home() {
     const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(nftTransferAddress, NFTTransfer.abi, provider);
 
+    //fetching the certificates from the market contracts
     const data = await marketContract.fetchCertificatesLeft();
     const items = await Promise.all(data.map(async i => {
-
+      //getting the ipfs url of each certificate item
       const tokenUri = await tokenContract.tokenURI(i.tokenId);
+      //fetching the ipfs url, which will return a meta json
       const meta = await axios.get(tokenUri);
 
       let item = {
@@ -52,6 +59,10 @@ export default function Home() {
     setLoadingState('loaded');
   }
 
+  /**
+   * Transfer the nft to a user
+   * @param {object} nft Nft which needed to be transferred
+   */
   async function transferNFT(nft) {
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
@@ -60,11 +71,14 @@ export default function Home() {
     const signer = provider.getSigner();
     let contract = new ethers.Contract(nftTransferAddress, NFTTransfer.abi, signer);
 
+    //calling transfer certificate contract
     const transaction = await contract.transferCertificate(
       nftAddress,
       nft.tokenId,
       walletAdd);
+    //waiting for the transaction to finish
     await transaction.wait();
+    //reload the nfts
     loadNFTs();
   }
 
