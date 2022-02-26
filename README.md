@@ -341,17 +341,13 @@ npm run dev
 <br>
 <br>
 
-\*Currently it is deployed on the Polygon Mumbai-Testnet.
+* Currently it is deployed on the Polygon Mumbai-Testnet.
 
-<<<<<<< Updated upstream
-\*Make Pull Request on Dev Branch Only
-=======
-<<<<<<< Updated upstream
-=======
-\*Make Pull Request on Dev Branch Only
 
-> > > > > > > Stashed changes
-> > > > > > > Stashed changes
+* Make Pull Request on Dev Branch Only
+
+
+
 
 <br>
 
