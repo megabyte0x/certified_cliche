@@ -6,7 +6,6 @@
  <img src = "https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"><img/>
 </a>
 
-
 <br>
 
 # Project Description
@@ -31,16 +30,19 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 <br>
 
-# How to Run
+# Set Up
 
 ## Prerequisites
 
 <br>
 
 ### <a href ="https://www.geeksforgeeks.org/how-to-install-and-use-metamask-on-google-chrome/" target="_blank">Metamask Installed as extension in your Browser<a/>
+
 ### <a href ="https://www.geeksforgeeks.org/installation-of-node-js-on-windows/" target="_blank"> Nodejs Installed in your system<a/>
+
 ### <a href ="https://www.geeksforgeeks.org/ultimate-guide-git-github/?ref=gcse" target="_blank">Knowledge of Git and GitHub<a/>
 
+### <p> <a href ="https://code.visualstudio.com/docs/setup/windows">Install VS CODE </a> or Any other IDE </p>
 
 <br>
 
@@ -48,23 +50,35 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 <br>
 
-### Give the repo a Star and Fork it.
+### To Contribute give the repo a Star⭐️ and Fork it.
+
+<img src ="readme_assets/images/star_and_fork.png"></img>
 
 <br>
 
-### Clone the repo in a directory.
+### Clone the repo.
 
 ```
 git clone https://github.com/${GitHub Username}/certified_cliche.git
 ```
 
+<img src ="readme_assets/images/clone.png"></img>
+
+Example => `git clone https://github.com/Megabyte-143/certified_cliche.git`
+
 <br>
 
 ### Open Terminal on the Folder
 
+```
+cd certified_cliche
+```
+
+<img src ="readme_assets/images/cd.png"></img>
+
 <br>
 
-### Go the the client directory
+### Go the the `client` directory
 
 ```
 cd client
@@ -81,7 +95,7 @@ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
 <br>
 
-### Switch to the CONTRACT directory
+### Switch to the `CONTRACT` directory
 
 ```
 cd ..
@@ -98,9 +112,60 @@ npm install
 
 <br>
 
-## [On LocalHost]
+## 🔴 Important 🔴
 
-### Open the terminal in the CONTRACT directory
+> Create a file in `CONTRACT` directory named as `.projectId`
+
+```
+touch .projectId
+```
+
+> Paste the Project ID in it.
+
+This is the example of <a href="https://rpc.maticvigil.com/">MATIC VIGIL</a>
+<img src= "readme_assets/images/app_id.png"></img>
+
+```
+echo {appId} > .projectId
+```
+
+> Create a file in `CONTRACT` directory named as `.secret`
+
+```
+touch .secret
+```
+
+> Paste the Test Wallet `Private Address` in it.
+
+This is the example of TEST WALLET in METAMASK.
+<img src= "readme_assets/images/metamask_1.png"></img>
+<img src= "readme_assets/images/metamask_2.png"></img>
+
+```
+echo {privateKey} > .secret
+```
+
+<br>
+
+
+<hr>
+
+
+<br>
+
+# [To Run On LocalHost]
+
+<br>
+
+### Run the Nodes
+
+```
+npx hardhat node
+```
+
+<br>
+
+### Open a new Terminal on `CONTRACT` Directory
 
 <br>
 
@@ -113,14 +178,6 @@ npx hardhat run scripts/deploy.js
 <br>
 
 ### Copy the `NFT CONTRACT ADDRESS` and the `NFT TRANSFER ADDRESS`, and paste them in the `CONTRACT/config.js`
-
-<br>
-
-### Run the Nodes
-
-```
-npx hardhat nodes
-```
 
 <br>
 
@@ -177,7 +234,7 @@ npm run dev
 
 <br>
 
-## [On Polygon Mumbai Testnet]
+# [To Run On Polygon Mumbai Testnet]
 
 ### Get the Polygon Mumbai Testnet `RPC URL` from the providers.
 
@@ -284,9 +341,17 @@ npm run dev
 <br>
 <br>
 
-*Currently it is deployed on the Polygon Mumbai-Testnet.
+\*Currently it is deployed on the Polygon Mumbai-Testnet.
 
-*Make Pull Request on Dev Branch Only
+<<<<<<< Updated upstream
+\*Make Pull Request on Dev Branch Only
+=======
+<<<<<<< Updated upstream
+=======
+\*Make Pull Request on Dev Branch Only
+
+> > > > > > > Stashed changes
+> > > > > > > Stashed changes
 
 <br>
 
