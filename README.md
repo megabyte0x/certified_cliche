@@ -135,15 +135,25 @@ echo {appId} > .projectId
 touch .secret
 ```
 
-> Paste the Test Wallet `Private Address` in it.
+> Get a Test Wallet
 
-This is the example of TEST WALLET in METAMASK.
-<img src= "readme_assets/images/metamask_1.png"></img>
-<img src= "readme_assets/images/metamask_2.png"></img>
+```
+npx hardhat node
+```
+Copy any Private Key.
+
+
+> Paste the Test Wallet `Private Address` in it.
 
 ```
 echo {privateKey} > .secret
 ```
+
+> SetUp the Metamask Test Wallet [with same Private Address].
+
+This is the example of TEST WALLET in METAMASK.
+<img src= "readme_assets/images/metamask_1.png"></img>
+<img src= "readme_assets/images/metamask_2.png"></img>
 
 <br>
 
