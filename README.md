@@ -78,6 +78,14 @@ cd certified_cliche
 
 <br>
 
+### Checkout to the `dev` branch
+
+```
+git checkout dev
+```
+
+<br>
+
 ### Go the the `client` directory
 
 ```
@@ -129,19 +137,24 @@ This is the example of <a href="https://rpc.maticvigil.com/">MATIC VIGIL</a>
 echo {appId} > .projectId
 ```
 
-> Create a file in `CONTRACT` directory named as `.secret`
-
-```
-touch .secret
-```
-
 > Get a Test Wallet
 
 ```
 npx hardhat node
 ```
-Copy any Private Key.
 
+> Copy any Private Key.
+
+<img src= "readme_assets/images/private_key.png"></img>
+
+> Open a New Terminal at `certified_cliche`
+
+> Create a file in `CONTRACT` directory named as `.secret`
+
+```
+cd CONTRACT
+touch .secret
+```
 
 > Paste the Test Wallet `Private Address` in it.
 
@@ -157,13 +170,25 @@ This is the example of TEST WALLET in METAMASK.
 
 <br>
 
-
 <hr>
 
+# Open The Folder in the VS Code or any IDE.
+
+### And Start Contributing 😀
+
+<hr>
 
 <br>
 
 # [To Run On LocalHost]
+
+<br>
+
+### Switch to CONTRACT Directory [if you are not on it already]
+
+```
+cd CONTRACT
+```
 
 <br>
 
@@ -351,13 +376,9 @@ npm run dev
 <br>
 <br>
 
-* Currently it is deployed on the Polygon Mumbai-Testnet.
+- Currently it is deployed on the Polygon Mumbai-Testnet.
 
-
-* Make Pull Request on Dev Branch Only
-
-
-
+- Make Pull Request on Dev Branch Only
 
 <br>
 
