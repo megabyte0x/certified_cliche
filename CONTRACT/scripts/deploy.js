@@ -19,7 +19,7 @@ async function main() {
   let nftTransferAddress = txReceipt.contractAddress
 
   // NFT Transfer Contract Address
-  console.log("nftTransfer deployed to:", nftTransferAddress);
+  console.log("nftTransferAddress:", nftTransferAddress);
 
   const NFT = await hre.ethers.getContractFactory("NFT");
   const nft = await NFT.deploy(nftTransferAddress);
@@ -32,7 +32,7 @@ async function main() {
   let nftAddress = txReceipt.contractAddress
 
   // NFT Contract Address
-  console.log("nft deployed to:", nftAddress);
+  console.log("nftAddress:", nftAddress);
 }
 
 main()
