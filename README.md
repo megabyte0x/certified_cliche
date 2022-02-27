@@ -170,17 +170,11 @@ This is the example of TEST WALLET in METAMASK.
 
 <br>
 
-<hr>
-
 # Open The Folder in the VS Code or any IDE.
-
-### And Start Contributing 😀
-
-<hr>
 
 <br>
 
-# [To Run On LocalHost]
+# [To Run On LocalHost][recommended]
 
 <br>
 
@@ -214,22 +208,23 @@ npx hardhat run scripts/deploy.js
 
 ### Copy the `NFT CONTRACT ADDRESS` and the `NFT TRANSFER ADDRESS`, and paste them in the `CONTRACT/config.js`
 
+<img src= "readme_assets/images/addresses.png"></img>
+
 <br>
 
 ### Open New Terminal on the `client` folder.
 
 <br>
 
-### Uncomment the LocalHost provider
+### Uncomment the LocalHost provider in `client/pages/index.js`
 
 ```
- For the LocalHost
  const provider = new ethers.providers.JsonRpcProvider();
 ```
 
 <br>
 
-### Copy the `NFT.json` from
+### Copy the `NFT.json` file from
 
 ```
 CONTRACT/artifacts/contracts/NFT.sol/NFT.json
@@ -243,7 +238,7 @@ client/abi/NFT.json
 
 <br>
 
-### Copy the `NFTTransfer.json` from
+### Copy the `NFTTransfer.json` file from
 
 ```
 CONTRACT/artifacts/contracts/NFTTransfer.sol/NFTTransfer.json
@@ -267,6 +262,14 @@ client/abi/NFTTransfer.json
 npm run dev
 ```
 
+<br>
+
+# And Now you may Start Contributing 😀
+
+<br>
+<hr>
+<hr>
+<br>
 <br>
 
 # [To Run On Polygon Mumbai Testnet]
