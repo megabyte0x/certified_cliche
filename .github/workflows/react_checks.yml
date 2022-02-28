@@ -12,7 +12,7 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: ${{ github.head_ref }}
           VALIDATE_ALL_CODEBASE: false
           FILTER_REGEX_INCLUDE: .*client/.*
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
