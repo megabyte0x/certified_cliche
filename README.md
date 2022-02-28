@@ -78,6 +78,14 @@ cd certified_cliche
 
 <br>
 
+### Checkout to the `dev` branch
+
+```
+git checkout dev
+```
+
+<br>
+
 ### Go the the `client` directory
 
 ```
@@ -129,31 +137,52 @@ This is the example of <a href="https://rpc.maticvigil.com/">MATIC VIGIL</a>
 echo {appId} > .projectId
 ```
 
+> Get a Test Wallet
+
+```
+npx hardhat node
+```
+
+> Copy any Private Key.
+
+<img src= "readme_assets/images/private_key.png"></img>
+
+> Open a New Terminal at `certified_cliche`
+
 > Create a file in `CONTRACT` directory named as `.secret`
 
 ```
+cd CONTRACT
 touch .secret
 ```
 
 > Paste the Test Wallet `Private Address` in it.
 
-This is the example of TEST WALLET in METAMASK.
-<img src= "readme_assets/images/metamask_1.png"></img>
-<img src= "readme_assets/images/metamask_2.png"></img>
-
 ```
 echo {privateKey} > .secret
 ```
 
+> SetUp the Metamask Test Wallet [with same Private Address].
+
+This is the example of TEST WALLET in METAMASK.
+<img src= "readme_assets/images/metamask_1.png"></img>
+<img src= "readme_assets/images/metamask_2.png"></img>
+
 <br>
 
-
-<hr>
-
+# Open The Folder in the VS Code or any IDE.
 
 <br>
 
-# [To Run On LocalHost]
+# [To Run On LocalHost][recommended]
+
+<br>
+
+### Switch to CONTRACT Directory [if you are not on it already]
+
+```
+cd CONTRACT
+```
 
 <br>
 
@@ -179,22 +208,23 @@ npx hardhat run scripts/deploy.js
 
 ### Copy the `NFT CONTRACT ADDRESS` and the `NFT TRANSFER ADDRESS`, and paste them in the `CONTRACT/config.js`
 
+<img src= "readme_assets/images/addresses.png"></img>
+
 <br>
 
 ### Open New Terminal on the `client` folder.
 
 <br>
 
-### Uncomment the LocalHost provider
+### Uncomment the LocalHost provider in `client/pages/index.js`
 
 ```
- For the LocalHost
  const provider = new ethers.providers.JsonRpcProvider();
 ```
 
 <br>
 
-### Copy the `NFT.json` from
+### Copy the `NFT.json` file from
 
 ```
 CONTRACT/artifacts/contracts/NFT.sol/NFT.json
@@ -208,7 +238,7 @@ client/abi/NFT.json
 
 <br>
 
-### Copy the `NFTTransfer.json` from
+### Copy the `NFTTransfer.json` file from
 
 ```
 CONTRACT/artifacts/contracts/NFTTransfer.sol/NFTTransfer.json
@@ -232,6 +262,14 @@ client/abi/NFTTransfer.json
 npm run dev
 ```
 
+<br>
+
+# And Now you may Start Contributing 😀
+
+<br>
+<hr>
+<hr>
+<br>
 <br>
 
 # [To Run On Polygon Mumbai Testnet]
@@ -341,13 +379,9 @@ npm run dev
 <br>
 <br>
 
-* Currently it is deployed on the Polygon Mumbai-Testnet.
+- Currently it is deployed on the Polygon Mumbai-Testnet.
 
-
-* Make Pull Request on Dev Branch Only
-
-
-
+- Make Pull Request on Dev Branch Only
 
 <br>
 

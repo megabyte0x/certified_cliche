@@ -29,7 +29,7 @@ export default function Home() {
   async function loadNFTs() {
     
     // For the Mumbai Testnet
-    const provider = new ethers.providers.JsonRpcProvider(rpc_url);
+    // const provider = new ethers.providers.JsonRpcProvider(rpc_url);
 
     // For the LocalHost
     // const provider = new ethers.providers.JsonRpcProvider();
