@@ -56,7 +56,7 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 <br>
 
-## Intialization
+## Initialization
 
 <br>
 
