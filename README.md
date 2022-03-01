@@ -30,6 +30,16 @@ Our idea is unique in itself as it restores the uniqueness and authenticity of C
 
 <br>
 
+# ROADMAP
+
+## <a href = "https://www.figma.com/file/HjYi7KbugT0xsXoA7arIN2/Certified-Cliche?node-id=0%3A1" target="_blank" >Figma</a>
+
+## <a href="https://whimsical.com/workflow-JuAUDpown8n3EBjRqDShHQ" target="_blank">Workflow</a>
+
+## <a href = "https://whimsical.com/architecture-T6APUm5Y1Cii8SC4UnndDM" target="_blank">Architecture</a>
+
+<br>
+
 # Set Up
 
 ## Prerequisites
