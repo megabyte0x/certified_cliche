@@ -4,7 +4,6 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import Popup from "reactjs-popup";
 import classes from "../styles/Home.module.css";
-import Footer from "./components/Footer/Footer";
 
 import { nftAddress, nftTransferAddress, rpc_url } from "../../CONTRACT/config";
 
@@ -31,7 +30,7 @@ export default function Home() {
     // const provider = new ethers.providers.JsonRpcProvider(rpc_url);
 
     // For the LocalHost
-    // const provider = new ethers.providers.JsonRpcProvider();
+    const provider = new ethers.providers.JsonRpcProvider();
 
     const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
@@ -151,7 +150,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
