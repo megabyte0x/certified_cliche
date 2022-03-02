@@ -1,11 +1,10 @@
 import '../styles/globals.css'
 import Link from 'next/link'
 import Head from 'next/head'
-import Footer from './components/Footer/Footer'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className='flex flex-col h-screen'>
+    <div>
       <nav className="border-b p-6 place-content-center">
         <p className="text-4xl font-bold mt-4  ">
           Certified-Cliché
@@ -34,7 +33,6 @@ function MyApp({ Component, pageProps }) {
         </div>
       </nav>
       <Component {...pageProps} />
-      <Footer />
     </div>
   )
 }
