@@ -233,7 +233,7 @@ npx hardhat node
 ### Deploy the contract on the LocalHost
 
 ```
-npx hardhat run scripts/deploy.js
+npx hardhat run scripts/deploy.js --network localhost
 ```
 
 <br>
