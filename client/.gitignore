@@ -32,8 +32,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-#contract
-/abi
-
-.git
