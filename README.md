@@ -430,6 +430,20 @@ npm run dev
 <br>
 <br>
 
+## 🌟 Contributors 
+
+Thanks to these wonderful people ✨✨:
+
+<table>
+	<tr>
+		<td>
+			<a href="https://github.com/Megabyte-143/certified_cliche/graphs/contributors">
+  				<img src="https://contrib.rocks/image?repo=Megabyte-143/certified_cliche" />
+			</a>
+		</td>
+	</tr>
+</table>
+
 <div align="center"> 
 <h2>Project Created by </h2>
 
