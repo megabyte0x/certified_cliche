@@ -7,7 +7,7 @@ const NFTCard = ({key, nftImage, nftName, nftDesciption}) => {
         <img
           src={nftImage}
           alt={nftName}
-          className="rounded-t-3xl w-[261px] h-[246px]"
+          className="rounded-t-3xl object-cover h-[246px]"
         />
         <div className="py-2 px-6">
           <p className="text-lg font-semibold">{nftName} </p>
