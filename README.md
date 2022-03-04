@@ -1,19 +1,10 @@
 # <a href="https://certified-cliche.vercel.app/">Certified-Cliché</a>
 
-### `Uniqueness with Authenticity.`
+## `Uniqueness with Authenticity.`
 
 <a href="https://www.youtube.com/watch?v=rJpA7ulK2rQ" target="_blank" >
  <img src = "https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"><img/>
 </a>
-
-<br>
-
-<hr>
-<hr>
-
-<br>
-
-# Project Description
 
 ## Problem Description
 
@@ -21,8 +12,6 @@ Today the authenticity of online certificates has fallen due to practices like f
 
 We all have done some courses or worked in companies etc, and we get the certificates for the same, this is one of the rewards we get from the hard work. But how would you feel if someone get all those certificates without doing hard work and only by editing them? And to prevent this from happening anymore we built
 `Certified Cliché`.
-
-<hr>
 
 ## Solution
 
@@ -33,41 +22,21 @@ That will make their certificate authentic, and then they can transfer it to the
 
 Our idea is unique in itself as it restores the uniqueness and authenticity of Certificates by storing them as or in as NFT and making them more valuable.
 
-<br>
+## ROADMAP
 
-<hr>
-<hr>
+ - <a href = "https://www.figma.com/file/HjYi7KbugT0xsXoA7arIN2/Certified-Cliche?node-id=0%3A1" target="_blank" >Figma</a>
+ - <a href="https://whimsical.com/workflow-JuAUDpown8n3EBjRqDShHQ" target="_blank">Workflow</a>
+ - <a href = "https://whimsical.com/architecture-T6APUm5Y1Cii8SC4UnndDM" target="_blank">Architecture</a>
 
-<br>
+## Set Up
 
-# ROADMAP
+### Prerequisites
 
-## <a href = "https://www.figma.com/file/HjYi7KbugT0xsXoA7arIN2/Certified-Cliche?node-id=0%3A1" target="_blank" >Figma</a>
+- <a href ="https://www.geeksforgeeks.org/how-to-install-and-use-metamask-on-google-chrome/" target="_blank">Metamask Installed as extension in your Browser<a/>
+- <a href ="https://www.geeksforgeeks.org/installation-of-node-js-on-windows/" target="_blank"> Nodejs Installed in your system<a/>
+- <a href ="https://www.geeksforgeeks.org/ultimate-guide-git-github/?ref=gcse" target="_blank">Knowledge of Git and GitHub<a/>
+- <a href ="https://code.visualstudio.com/docs/setup/windows">Install VS CODE </a> or Any other IDE
 
-## <a href="https://whimsical.com/workflow-JuAUDpown8n3EBjRqDShHQ" target="_blank">Workflow</a>
-
-## <a href = "https://whimsical.com/architecture-T6APUm5Y1Cii8SC4UnndDM" target="_blank">Architecture</a>
-
-<br>
-
-<hr>
-<hr>
-
-<br>
-
-# Set Up
-
-## Prerequisites
-
-<br>
-
-### <a href ="https://www.geeksforgeeks.org/how-to-install-and-use-metamask-on-google-chrome/" target="_blank">Metamask Installed as extension in your Browser<a/>
-
-### <a href ="https://www.geeksforgeeks.org/installation-of-node-js-on-windows/" target="_blank"> Nodejs Installed in your system<a/>
-
-### <a href ="https://www.geeksforgeeks.org/ultimate-guide-git-github/?ref=gcse" target="_blank">Knowledge of Git and GitHub<a/>
-
-### <p> <a href ="https://code.visualstudio.com/docs/setup/windows">Install VS CODE </a> or Any other IDE </p>
 
 <br>
 
