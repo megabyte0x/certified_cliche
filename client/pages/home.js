@@ -12,7 +12,7 @@ import { nftAddress, nftTransferAddress, rpc_url } from "../../CONTRACT/config";
 import NFT from "../abi/NFT.json";
 import NFTTransfer from "../abi/NFTTransfer.json";
 
-export default function Home() {
+export default function HomePage() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState('not-loaded');
   const [walletAdd, setWalletAdd] = useState(null);

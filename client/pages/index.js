@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import individualLogo from '../public/Individual.png'
 import organizationLogo from '../public/organization.png'
-export default function SelectRole() {
+export default function Home() {
   return (
     <div >
       <Head>
@@ -13,8 +13,8 @@ export default function SelectRole() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid xl:grid-cols-2 xxl:gap-0 lg:gap-0 md:gap-0 lg:grid-cols-2 col-span-1 '>
-        <div className='bg-[#4A3CED] xl:h-[100vh] h-[50vh]  grid place-items-center' >
-        <div>
+        <div className='bg-[#4A3CED]  xl:h-[52.65vh] h-[50vh]  grid place-items-center' >
+        <div className='transform motion-safe:hover:scale-110'>
             <a href='#'>
               <Image
                 src={organizationLogo}
@@ -27,8 +27,8 @@ export default function SelectRole() {
           </div>
 
         </div>
-        <div className='  xl:h-[100vh] h-[50vh] grid place-items-center'>
-          <div>
+        <div className='  xl:h-[52.65vh] h-[50vh] grid place-items-center'>
+          <div className='transform motion-safe:hover:scale-110'>
             <a href='#'>
               <Image
                 src={individualLogo}
