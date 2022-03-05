@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid xl:grid-cols-2 xxl:gap-0 lg:gap-0 md:gap-0 lg:grid-cols-2 col-span-1 '>
-        <div className='bg-[#4A3CED]  xl:h-[52.65vh] h-[50vh]  grid place-items-center' >
+        <div className='bg-[#4A3CED]  xl:h-[392.75px] h-[392px]  grid place-items-center' >
         <div className='transform motion-safe:hover:scale-110'>
             <a href='#'>
               <Image
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
 
         </div>
-        <div className='  xl:h-[52.65vh] h-[50vh] grid place-items-center'>
+        <div className=' xl:h-[392.75px] h-[392px]  grid place-items-center'>
           <div className='transform motion-safe:hover:scale-110'>
             <a href='#'>
               <Image
