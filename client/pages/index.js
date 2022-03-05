@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import individualLogo from '../public/Individual.png'
 import organizationLogo from '../public/organization.png'
-export default function Home() {
+export default function SelectRole() {
   return (
     <div >
       <Head>
