@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
           Certified-Cliché
         </p>
         <div className="flex mt-4">
-          <Link href="/">
+          <Link href="/home">
             <a className="mr-4 text-pink-500">
               Home
             </a>
