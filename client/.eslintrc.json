@@ -1,3 +1,10 @@
 {
-  "extends": ["next/babel"]
+  "extends": ["next/babel"],
+  "rules": {
+    //You can remove this after  removing warnings
+    "@next/next/no-img-element": "off",//This is used to remove the warnings of img tag.We have to use next image for that
+    "jsx-a11y/alt-text":"off"//we have to write alt tag for every img
 }
+}
+
+    
