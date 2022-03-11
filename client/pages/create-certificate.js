@@ -108,7 +108,7 @@ export default function CreateItem() {
         await transaction.wait();
         console.log("completed")
         //navigate back to home page
-        router.push('/');
+        router.push('/home');
     }
 
     return (

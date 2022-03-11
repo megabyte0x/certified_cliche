@@ -33,9 +33,11 @@ function MyApp({ Component, pageProps }) {
           </Link>
         </div>
       </nav>
+      
       <Component {...pageProps} />
       <Footer />
     </div>
+   
   )
 }
 

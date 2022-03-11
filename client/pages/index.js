@@ -1,10 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
-
+import Modal from './components/WalletConnect/Modal'
+import { useState } from 'react'
 import individualLogo from '../public/Individual.png'
 import organizationLogo from '../public/organization.png'
+
+
 export default function Home() {
+  // if(process.browser){ 
+  
+  //       const { ethereum }=window;
+  //       if (!ethereum)  alert("Please install MetaMask.");}
+  const [openModal,setOpenModal]=useState(false)
+ 
   return (
     <div >
       <Head>
@@ -17,24 +25,26 @@ export default function Home() {
         
         <div className=' transform motion-safe:hover:scale-110 ' >
         
-            <a href='#'>
+            <button onClick={()=>{setOpenModal(true);
+
+            }}>
               <Image
                 src={organizationLogo}
                 width="125.25x"
                 height="125.25px"
                 
               />
-            </a>
+             
+            </button>
             
             <div className='text-[#ffffff] font-bold font-sans text-2xl text-center mt-2'>Organization</div>
           </div>
-
-
+         
         </div>
         <div className=' h-[calc(100vh-353px)]   grid place-items-center'>
           <div className='transform motion-safe:hover:scale-110  '>
           
-            <a href='#'>
+            <button>
               <Image
                 src={individualLogo}
                 width="125.25x"
@@ -42,14 +52,20 @@ export default function Home() {
                 
                 
               />
-            </a>
+            </button>
             
             <div className='text-[#4A3CED] font-bold font-sans text-2xl text-center mt-2'>Individual</div>
           </div>
         </div>
 
       </div>
+      {openModal && <Modal />}
+    </div> 
+    
+    
 
-    </div>
   )
 }
+
+
+
