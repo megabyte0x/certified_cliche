@@ -1,9 +1,69 @@
 import React, { useState } from "react";
+
 import Image from 'next/image'
+import Router from 'next/router'
 
 import metamaskLogo from '../../../public/metamask.png'
 import WalletConnectLogo from '../../../public/walletconnect.png'
-const Modal = () => {
+import { useMoralis } from "react-moralis";
+import Moralis from "moralis";
+
+const Modal = ({ org, ind }) => {
+  const {  isAuthenticated ,isWeb3Enabled,enableWeb3 } = useMoralis()
+  
+  const initialUser = Moralis.User.current();
+  const [user, setUser] = useState(initialUser);
+
+  const onLoginWalletConnect = async () => {
+    try {
+      const user = await Moralis.authenticate({ provider: "walletconnect" });
+
+      setUser(user);
+      if (org) {
+        if (isAuthenticated) {
+          Router.push("/home");
+        }
+      }
+      if (ind) {
+        if (isAuthenticated) {
+          Router.push("/my-certificates");
+        }
+      }
+    } catch (err) {
+      alert("Something went wrong!")
+    };
+    
+      if(!isWeb3Enabled && isAuthenticated){
+        enableWeb3({provider:"walletconnect"});
+        console.log("web3 activated");
+      }
+    
+  };
+  const onLoginMetamask = async () => {
+    try {
+      const user = await Moralis.authenticate();
+      setUser(user);
+      if (org) {
+        if ( isAuthenticated) {
+          Router.push("/home");
+        }
+      }
+      if (ind) {
+        if (isAuthenticated) {
+          Router.push("/my-certificates");
+        }
+      }
+    } catch (err) {
+      alert("Someting went wrong!")
+    };
+    if(!isWeb3Enabled && isAuthenticated){
+      enableWeb3();
+      console.log("web3 activated");
+    }
+
+  };
+  
+
   return (
     <div className="fixed inset-0 bg-[#1f1e1e] bg-opacity-50 flex justify-center z-10 items-center h-full w-full">
       <div className="w-[754px] h-[462px] shadow-lg bg-[#FAFAFA]  flex flex-col p-[25px] rounded-[61px] ">
@@ -17,7 +77,7 @@ const Modal = () => {
         <div className="flex flex-row pt-[60px] p-6 pl-[151px] space-x-10 " >
           <div className="h-[185px] w-[181px]  bg-[#F3F3F3] rounded-[19px] ">
             <div className="pt-[36px] pl-[46px] cursor-pointer transform motion-safe:hover:scale-110">
-              <button>
+              <button onClick={onLoginMetamask}>
                 <Image
                   src={metamaskLogo}
                   width="88.85px"
@@ -28,7 +88,7 @@ const Modal = () => {
           </div>
           <div className="h-[185px] w-[181px]  bg-[#F3F3F3] rounded-[19px] ">
             <div className="pt-[36px] pl-[46px] cursor-pointer transform motion-safe:hover:scale-110">
-              <button>
+              <button onClick={onLoginWalletConnect} >
                 <Image
                   src={WalletConnectLogo}
                   width="90px"
@@ -40,7 +100,7 @@ const Modal = () => {
         </div>
       </div>
     </div>
-   
+
   )
 }
 

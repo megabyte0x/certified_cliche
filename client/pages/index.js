@@ -12,7 +12,8 @@ export default function Home() {
   //       const { ethereum }=window;
   //       if (!ethereum)  alert("Please install MetaMask.");}
   const [openModal,setOpenModal]=useState(false)
- 
+  const [organization,setOrganization]=useState(false)
+  const [individual,setIndividual]=useState(false)
   return (
     <div >
       <Head>
@@ -25,7 +26,7 @@ export default function Home() {
         
         <div className=' transform motion-safe:hover:scale-110 ' >
         
-            <button onClick={()=>{setOpenModal(true);
+            <button onClick={()=>{setOpenModal(true); setOrganization(true)
 
             }}>
               <Image
@@ -44,7 +45,7 @@ export default function Home() {
         <div className=' h-[calc(100vh-353px)]   grid place-items-center'>
           <div className='transform motion-safe:hover:scale-110  '>
           
-            <button>
+          <button onClick={()=>{setOpenModal(true); setIndividual(true)}}>
               <Image
                 src={individualLogo}
                 width="125.25x"
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
 
       </div>
-      {openModal && <Modal />}
+      {openModal && <Modal org={organization} ind={individual}/>}
     </div> 
     
     
