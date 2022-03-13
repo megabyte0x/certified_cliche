@@ -7,10 +7,6 @@ import organizationLogo from '../public/organization.png'
 
 
 export default function Home() {
-  // if(process.browser){ 
-  
-  //       const { ethereum }=window;
-  //       if (!ethereum)  alert("Please install MetaMask.");}
   const [openModal,setOpenModal]=useState(false)
   const [organization,setOrganization]=useState(false)
   const [individual,setIndividual]=useState(false)
