@@ -1,0 +1,25 @@
+nav{
+    background-color: #0000EE;
+    color: antiquewhite;
+}
+
+.right{
+   display: inline;
+   float:right;
+}
+#account{
+   font-weight: 900;
+}
+
+.active{
+    content: "";
+    display: inline;
+    color:antiquewhite;
+    padding-bottom:12px;
+    margin-bottom:0px;
+    border-bottom:8px solid white;
+}
+a{  
+    font-weight: 900;
+    color:antiquewhite;
+}
