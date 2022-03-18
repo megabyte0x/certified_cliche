@@ -89,7 +89,7 @@ const HomeComponent = () => {
       <div className="flex justify-center items-center">
         <div className="w-[95%]  bg-[#bbbaba] h-[1px] mb-10 mt-3 "></div>
       </div>
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="flex flex-wrap items-center md:justify-start justify-center">
         {certificateData.map((item) => {
           const { id } = item;
 
