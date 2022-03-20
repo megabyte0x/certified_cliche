@@ -21,18 +21,93 @@ describe("NFTTransfer", function () {
     //Create The NFTs (2 nfts here);
     await nft.createToken("https://www.mytokenlocation.com");
     await nft.createToken("https://www.mytokenlocation2.com");
+    await nft.createToken("https://www.mytokenlocation3.com");
 
     // Put the NFTs on Sale
     await nftTransfer.createCertificate(nftContractAddress, 1,{ value: listingPrice });
     await nftTransfer.createCertificate(nftContractAddress, 2,{ value: listingPrice });
+    await nftTransfer.createCertificate(nftContractAddress, 3, { value: listingPrice });
 
     // Get Some TestNet Buyers
     const [_, buyersAddress, add1] = await ethers.getSigners();
 
     // Transfering the NFT
     await nftTransfer.connect(buyersAddress).transferCertificate(nftContractAddress, 1,add1.address);
+    await nftTransfer.connect(add1).transferCertificate(nftContractAddress, 2, buyersAddress.address);
+
+    items = await nftTransfer.fetchMyCertificates();
+
+    items = await Promise.all(items.map(async i => {
+      const tokenUri = await nft.tokenURI(i.tokenId);
+      let item = {
+        tokenId: i.tokenId.toString(),
+        seller: i.seller,
+        owner: i.owner,
+        tokenUri
+      }
+      return item;
+    }))
+
+    console.log('items: ', items);
 
     items = await nftTransfer.connect(add1).fetchMyCertificates();
+
+    items = await Promise.all(items.map(async i => {
+      const tokenUri = await nft.tokenURI(i.tokenId);
+      let item = {
+        tokenId: i.tokenId.toString(),
+        seller: i.seller,
+        owner: i.owner,
+        tokenUri
+      }
+      return item;
+    }))
+
+    console.log('items: ', items);
+
+    items = await nftTransfer.connect(buyersAddress).fetchMyCertificates();
+
+    items = await Promise.all(items.map(async i => {
+      const tokenUri = await nft.tokenURI(i.tokenId);
+      let item = {
+        tokenId: i.tokenId.toString(),
+        seller: i.seller,
+        owner: i.owner,
+        tokenUri
+      }
+      return item;
+    }))
+
+    console.log('items: ', items);
+    items = await nftTransfer.fetchCertificatesCreated();
+
+    items = await Promise.all(items.map(async i => {
+      const tokenUri = await nft.tokenURI(i.tokenId);
+      let item = {
+        tokenId: i.tokenId.toString(),
+        seller: i.seller,
+        owner: i.owner,
+        tokenUri
+      }
+      return item;
+    }))
+
+    console.log('items: ', items);
+    items = await nftTransfer.fetchCertificatesLeft();
+
+    items = await Promise.all(items.map(async i => {
+      const tokenUri = await nft.tokenURI(i.tokenId);
+      let item = {
+        tokenId: i.tokenId.toString(),
+        seller: i.seller,
+        owner: i.owner,
+        tokenUri
+      }
+      return item;
+    }))
+
+    console.log('items: ', items);
+    items = await nftTransfer.fetchCertificatesTransferred();
 
     items = await Promise.all(items.map(async i => {
       const tokenUri = await nft.tokenURI(i.tokenId);
