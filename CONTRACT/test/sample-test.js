@@ -26,13 +26,13 @@ describe("NFTTransfer", function () {
     // Put the NFTs on Sale
     await nftTransfer.createCertificate(nftContractAddress, 1,{ value: listingPrice });
     await nftTransfer.createCertificate(nftContractAddress, 2,{ value: listingPrice });
-    await nftTransfer.createCertificate(nftContractAddress, 3, { value: listingPrice });
+    await nftTransfer.createCertificate(nftContractAddress, 3,{ value: listingPrice });
 
     // Get Some TestNet Buyers
     const [_, buyersAddress, add1] = await ethers.getSigners();
 
     // Transfering the NFT
-    await nftTransfer.connect(buyersAddress).transferCertificate(nftContractAddress, 1,add1.address);
+    await nftTransfer.connect(buyersAddress).transferCertificate(nftContractAddress, 1, add1.address);
     await nftTransfer.connect(add1).transferCertificate(nftContractAddress, 2, buyersAddress.address);
 
     items = await nftTransfer.fetchMyCertificates();
