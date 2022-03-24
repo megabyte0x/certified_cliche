@@ -5,6 +5,10 @@ import Head from 'next/head'
 function MyApp({ Component, pageProps }) {
   return (
     <div>
+      <Head>
+        <title>Certified-Cliché</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <nav className="border-b p-6 place-content-center">
         <p className="text-4xl font-bold mt-4  ">
           Certified-Cliché
