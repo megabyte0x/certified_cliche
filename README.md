@@ -177,7 +177,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 - Open New Terminal on the `client` folder.
 
-- Uncomment the LocalHost provider in `client/pages/index.js`
+- Uncomment the LocalHost provider in `client/pages/home-backup.js`
 
 ```
  const provider = new ethers.providers.JsonRpcProvider();
