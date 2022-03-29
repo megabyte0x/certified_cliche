@@ -1,0 +1,26 @@
+.navigations{
+    background-color: #0000EE;
+    color: antiquewhite;
+}
+
+.right{
+   display: inline;
+   float:right;
+}
+.account{
+   font-weight: 900;
+}
+
+.active{
+    content: "";
+    display: inline;
+    color:antiquewhite;
+    padding-bottom:12px;
+    margin-bottom:0px;
+    font-weight:900;
+    border-bottom:8px solid white;
+}
+.links{  
+    font-weight: 900;
+    color:antiquewhite;
+}
