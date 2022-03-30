@@ -14,7 +14,7 @@ const Navbar = () => {
         <p className={navbarcss.account}>0xA018Bds3adfj1</p>
         </div>
         <div className={navbarcss.right}>
-           <Image src="/wall.png" width="30px" height="27px"/>
+           <Image src={pic} width="30px" height="27px"/>
         </div>
         <div className="flex mt-4">
           <Link href="/">
