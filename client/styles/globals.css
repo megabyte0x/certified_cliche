@@ -1,6 +1,4 @@
-.p6{
-    padding-bottom:0rem;
-}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
