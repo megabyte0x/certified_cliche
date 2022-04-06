@@ -8,7 +8,8 @@
    float:right;
 }
 .account{
-   font-weight: 900;
+   font-weight: 500;
+   font-family: 'Helvetica';
 }
 
 .active{
@@ -17,10 +18,15 @@
     color:antiquewhite;
     padding-bottom:12px;
     margin-bottom:0px;
-    font-weight:900;
+    font-weight:500;
+    font-family: 'Helvetica';
     border-bottom:8px solid white;
 }
 .links{  
-    font-weight: 900;
+    font-weight: 500;
+    font-family: 'Helvetica';
     color:antiquewhite;
+}
+nav.p-6{
+    padding:1.08rem;
 }

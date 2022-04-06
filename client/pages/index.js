@@ -32,7 +32,11 @@ export default function Home() {
     // const provider = new ethers.providers.JsonRpcProvider(rpc_url);
 
     // For the LocalHost
+<<<<<<< HEAD
    // const provider = new ethers.providers.JsonRpcProvider();
+=======
+    // const provider = new ethers.providers.JsonRpcProvider();
+>>>>>>> c1e2b34f65b33c7179670fbf77c4997e6e801829
 
     const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(nftTransferAddress, NFTTransfer.abi, provider);
