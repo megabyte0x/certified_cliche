@@ -23,7 +23,7 @@ const Navbar = () => {
             </a>
           </Link>
           <Link href="/create-certificate">
-            <a className="mr-6 text-white-500">
+            <a className="mr-6 text-white-500 border-b-8">
               <span className={navbarcss.active}>Create Certificate</span>
             </a>
           </Link>
