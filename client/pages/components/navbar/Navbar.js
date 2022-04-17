@@ -22,8 +22,8 @@ const Navbar = () => {
              <span className={navbarcss.links}>Home</span>
             </a>
           </Link>
-          <Link href="/create-certificate">
-            <a className="mr-6 text-white-500 border-b-8">
+          <Link href="/create-certificate border">
+            <a className="mr-6 text-white-500">
               <span className={navbarcss.active}>Create Certificate</span>
             </a>
           </Link>

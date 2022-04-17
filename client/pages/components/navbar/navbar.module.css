@@ -20,6 +20,7 @@
     margin-bottom:0px;
     font-weight:500;
     font-family: 'Helvetica';
+    border-bottom:12px white solid;
 }
 .links{  
     font-weight: 500;
@@ -29,3 +30,4 @@
 nav.p-6{
     padding:1.08rem;
 }
+
